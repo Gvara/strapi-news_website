@@ -1,10 +1,67 @@
 import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 
-const TeamPage = () => (
-	<div>
-		<h1>Contacts Page</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, numquam?</p>
-	</div>
+import Seo from '../../../components/seo'
+import Layout from '../../../components/layout'
+
+const ContactsPage = () => (
+  <Layout>
+    <StaticQuery
+      query={graphql`
+        query {
+          metaData: strapiGeneralSettings(strapiId: {eq: 1}) {
+            Data {
+              ... on StrapiGeneralSettingsData {
+                SiteMeta_Title
+                SiteMeta_Description
+              }
+            }
+          }
+
+          ContactsData: strapiSinglePage(strapiId: {eq: 3}) {
+            Title
+            Description
+          }
+        }
+      `}
+      render={data => (
+        <>
+          <Seo title       = {data.ContactsData.Title + " | ARC.UA"}
+               description = {data.ContactsData.Description} />
+
+          <section className="startPage-section contacts-section">
+            <div className="contacts-wrapper">
+              <div className="row row-contacts">
+                <div className="startPage-block contacts-block">
+                  <div className="main-title-block">
+                    <h2>{data.ContactsData.Title}</h2>
+                  </div>
+                        
+                  <div className="description-block">
+                    <div className="title-block">
+                      <h3>Email:</h3>
+                    </div>
+                    
+                    <div className="text-block">
+                      <a href="mailto:arcua.org@gmail.com">arcua.org@gmail.com</a>
+                    </div>
+                    
+                    <div className="title-block">
+                      <h3>Facebook:</h3>
+                    </div>
+                    
+                    <div className="text-block">
+                      <a href="https://www.facebook.com/ArcUA.org/" target="_blank" rel="nofollow noopener noreferrer">www.facebook.com/ArcUA.org</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </>
+      )}
+    />
+  </Layout>
 )
 
-export default TeamPage;
+export default ContactsPage
