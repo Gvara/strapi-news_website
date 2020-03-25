@@ -248,7 +248,7 @@ const PublicationsPage = () => (
       `}
       render={data => (
         <>
-          <Seo title = {data.PublicationsData.Title + " | ARC.UA"}
+          <Seo title       = {data.PublicationsData.Title + " | ARC.UA"}
                description = {data.PublicationsData.Description} />
 
           <section className="startPage-section articles_list-section">
@@ -276,4 +276,4 @@ const PublicationsPage = () => (
   </Layout>
 )
 
-export default PublicationsPage;
+export default PublicationsPage

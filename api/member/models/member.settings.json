@@ -32,7 +32,7 @@
     "ImageTitle": {
       "type": "string"
     },
-    "ImageDescription": {
+    "ImageAlt": {
       "type": "string"
     },
     "MenuIndex": {

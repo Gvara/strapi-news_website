@@ -277,7 +277,7 @@ const IndexPage = () => (
       `}
       render={data => (
         <>
-          <Seo title = "ARC.UA"
+          <Seo title       = "ARC.UA"
                description = {data.homePageData.Description} />
 
           <Header headerTitle       = {data.homePageData.Blocks[0].Header_Title} 

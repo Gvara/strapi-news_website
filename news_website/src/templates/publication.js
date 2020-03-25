@@ -12,7 +12,7 @@ export const query = graphql`
       Content
       Poster {
           childImageSharp {
-            fluid(maxWidth: 650) {
+            fluid(maxWidth: 650, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }
