@@ -15,6 +15,7 @@ import Helmet from "react-helmet"
 import "./layout.css"
 
 import Menu from "./menu"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`
@@ -37,14 +38,7 @@ const Layout = ({ children }) => {
       
       {children}
 
-      {/*
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a> and {" "} 
-        <a href="https://strapi.io">Strapi</a>
-      </footer>
-      */}
+      <Footer />
     </>
   )
 }

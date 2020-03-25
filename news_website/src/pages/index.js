@@ -3,8 +3,8 @@ import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-import Seo from "../components/seo"
-import Header from "../components/header"
+import Seo from '../components/seo'
+import Header from '../components/header'
 import Layout from '../components/layout'
 // import Image from "../components/image"
 // import SEO from "../components/seo"
@@ -17,12 +17,12 @@ function ImageAttr(inputElem, defaultElem) {
   return inputElem;
 }
 
-function PublicationPreviewStyle(document, inputElem) {
+function PublicationPreviewStyle(data, document, inputElem) {
   if (inputElem === "style_1") {
     return (
       <div key={document.node.id} className="float-l medium-6 tpl-wrapper style-1">
         <Link className="tpl-block" 
-              to={`/publications/${document.node.Alias}.html`} 
+              to={`/${data.publicationsCategotyAlias.Alias}/${document.node.Alias}.html`} 
               style={PublicationColorStyle(document.node.ColorStyle)}>
           <div className="description-block"
                style={PublicationColorStyle(document.node.ColorStyle)}>
@@ -42,7 +42,7 @@ function PublicationPreviewStyle(document, inputElem) {
     return (
       <div key={document.node.id} className="float-l medium-6 tpl-wrapper style-2">
         <Link className="tpl-block" 
-              to={`/publications/${document.node.Alias}.html`} 
+              to={`/${data.publicationsCategotyAlias.Alias}/${document.node.Alias}.html`} 
               style={PublicationColorStyle(document.node.ColorStyle)}>
           <div className="description-block"
                style={PublicationColorStyle(document.node.ColorStyle)}>
@@ -61,7 +61,7 @@ function PublicationPreviewStyle(document, inputElem) {
                 objectFit      = "cover"
                 objectPosition = "50% 50%"
                 title          = {ImageAttr(document.node.PosterTitle, document.node.Title)}
-                alt            = {ImageAttr(document.node.PosterAlt, document.node.Title + " | ARCUA")}
+                alt            = {ImageAttr(document.node.PosterAlt, document.node.Title + " | ARC.UA")}
                 style          = {{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%'}}
                 imgStyle       = {{ top: '50%', left: '50%'}} />
             </div>
@@ -75,7 +75,7 @@ function PublicationPreviewStyle(document, inputElem) {
     return (
       <div key={document.node.id} className="float-l medium-6 tpl-wrapper style-3">
         <Link className="tpl-block" 
-              to={`/publications/${document.node.Alias}.html`} 
+              to={`/${data.publicationsCategotyAlias.Alias}/${document.node.Alias}.html`} 
               style={PublicationColorStyle(document.node.ColorStyle)}>
           <div className="description-block"
                style={PublicationColorStyle(document.node.ColorStyle)}>
@@ -94,7 +94,7 @@ function PublicationPreviewStyle(document, inputElem) {
                 objectFit      = "cover"
                 objectPosition = "50% 50%"
                 title          = {ImageAttr(document.node.PosterTitle, document.node.Title)}
-                alt            = {ImageAttr(document.node.PosterAlt, document.node.Title + " | ARCUA")}
+                alt            = {ImageAttr(document.node.PosterAlt, document.node.Title + " | ARC.UA")}
                 style          = {{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%'}}
                 imgStyle       = {{ top: '50%', left: '50%'}} />
             </div>
@@ -108,7 +108,7 @@ function PublicationPreviewStyle(document, inputElem) {
     return (
       <div key={document.node.id} className="float-l medium-6 tpl-wrapper style-4">
         <Link className="tpl-block" 
-              to={`/publications/${document.node.Alias}.html`} 
+              to={`/${data.publicationsCategotyAlias.Alias}/${document.node.Alias}.html`} 
               style={PublicationColorStyle(document.node.ColorStyle)}>
           <div className="description-block"
                style={PublicationColorStyle(document.node.ColorStyle)}>
@@ -127,7 +127,7 @@ function PublicationPreviewStyle(document, inputElem) {
                 objectFit      = "cover"
                 objectPosition = "50% 50%"
                 title          = {ImageAttr(document.node.PosterTitle, document.node.Title)}
-                alt            = {ImageAttr(document.node.PosterAlt, document.node.Title + " | ARCUA")}
+                alt            = {ImageAttr(document.node.PosterAlt, document.node.Title + " | ARC.UA")}
                 style          = {{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%'}}
                 imgStyle       = {{ top: '50%', left: '50%'}} />
             </div>
@@ -141,7 +141,7 @@ function PublicationPreviewStyle(document, inputElem) {
     return (
       <div key={document.node.id} className="float-l large-12 tpl-wrapper style-5">
         <Link className="group tpl-block" 
-              to={`/publications/${document.node.Alias}.html`} 
+              to={`/${data.publicationsCategotyAlias.Alias}/${document.node.Alias}.html`} 
               style={PublicationColorStyle(document.node.ColorStyle)}>
           
           <div className="float-l medium-6 poster-wrapper">
@@ -151,7 +151,7 @@ function PublicationPreviewStyle(document, inputElem) {
                 objectFit      = "cover"
                 objectPosition = "50% 50%"
                 title          = {ImageAttr(document.node.PosterTitle, document.node.Title)}
-                alt            = {ImageAttr(document.node.PosterAlt, document.node.Title + " | ARCUA")} />
+                alt            = {ImageAttr(document.node.PosterAlt, document.node.Title + " | ARC.UA")} />
             </div>
           </div>
 
@@ -172,7 +172,7 @@ function PublicationPreviewStyle(document, inputElem) {
   return (
     <div key={document.node.id} className="float-l medium-6 tpl-wrapper style-1">
       <Link className="tpl-block" 
-            to={`/publications/${document.node.Alias}.html`} 
+            to={`/${data.publicationsCategotyAlias.Alias}/${document.node.Alias}.html`} 
             style={PublicationColorStyle(document.node.ColorStyle)}>
         <div className="description-block"
               style={PublicationColorStyle(document.node.ColorStyle)}>
@@ -216,12 +216,9 @@ const IndexPage = () => (
               }
             }
           }
-          footerData: strapiGeneralSettings(strapiId: {eq: 3}) {
-            Data {
-              ... on StrapiGeneralSettingsData {
-                SiteFooter_Content
-              }
-            }
+
+          publicationsCategotyAlias: strapiNavigation(strapiId: {eq: 1}) {
+            Alias
           }
 
           homePageData: strapiSinglePage(strapiId: {eq: 1}) {
@@ -280,31 +277,31 @@ const IndexPage = () => (
       `}
       render={data => (
         <>
-          <Seo title = "ARCUA"
+          <Seo title = "ARC.UA"
                description = {data.homePageData.Description} />
 
           <Header headerTitle       = {data.homePageData.Blocks[0].Header_Title} 
                   headerDescription = {data.homePageData.Blocks[0].Header_Description}
                   headerImage       = {data.homePageData.Blocks[0].Header_Image.childImageSharp.fluid}
                   headerImageTitle  = {ImageAttr(data.homePageData.Blocks[0].Header_ImageTitle, data.metaData.Data[0].SiteMeta_Title)}
-                  headerImageAlt    = {ImageAttr(data.homePageData.Blocks[0].Header_ImageAlt, data.metaData.Data[0].SiteMeta_Title + " | ARCUA")} />
+                  headerImageAlt    = {ImageAttr(data.homePageData.Blocks[0].Header_ImageAlt, data.metaData.Data[0].SiteMeta_Title + " | ARC.UA")} />
 
             <section className="home-page intro-section">
               {/* <a name="about_us" className="anchor"></a> */}
               
               <div className="intro-wrapper">
-                  <div className="row row-intro">
-                      <div className="group intro-block">
-                          <article className="float-l small-8 description-block left-block">
-                              <div className="main-title-block">
-                                  <h2>{data.homePageData.Blocks[1].Article_Title}</h2>
-                              </div>
-                              
-                              <div className="text-block" 
-                                   dangerouslySetInnerHTML={{ __html: data.homePageData.Blocks[1].Article_Content }} />
-                          </article>
+                <div className="row row-intro">
+                  <div className="group intro-block">
+                    <article className="float-l small-8 description-block left-block">
+                      <div className="main-title-block">
+                        <h2>{data.homePageData.Blocks[1].Article_Title}</h2>
                       </div>
+                        
+                      <div className="text-block" 
+                           dangerouslySetInnerHTML={{ __html: data.homePageData.Blocks[1].Article_Content }} />
+                    </article>
                   </div>
+                </div>
               </div>
           </section>
 
@@ -313,13 +310,13 @@ const IndexPage = () => (
               <div className="row row-articles_list">
                 <div className="articles_list-block">
                   <div className="main-title-block">
-                      <h2>{data.homePageIntroPublication.Title}</h2>
+                    <h2>{data.homePageIntroPublication.Title}</h2>
                   </div>
                   
                   <div className="content-block tpls-block out-row-width">
                     {data.allStrapiPublication.edges.map(document => {
                       return (
-                        PublicationPreviewStyle(document, document.node.PreviewStyle)
+                        PublicationPreviewStyle(data, document, document.node.PreviewStyle)
                       )
                     })}
                   </div>
@@ -375,24 +372,10 @@ const IndexPage = () => (
                 </div>
               </div>
             </div>
-        </section>
-
-        <footer>
-          <div className="footer-wrapper">
-            <div className="row row-footer">
-              <div className="footer-block">
-                <div className="table-block copyright-block">
-                  <div className="table-cell vertical-align-m title-block"
-                       dangerouslySetInnerHTML={{ __html: data.footerData.Data[0].SiteFooter_Content }} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
+          </section>
         </>
       )}
     />
-    
   </Layout>
 )
 

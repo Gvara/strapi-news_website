@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout' 
 
-import Header from "../components/header"
+//import Header from "../components/header"
 
 export const query = graphql`
   query PublicationTemplate($id: String!) {
@@ -28,7 +28,8 @@ export const query = graphql`
 const PublicationTemplate = ({ data }) => (
   <>
     <Layout>
-      
+      {/*<Header headerTitle={data.strapiSinglePage.Title} headerDescription={data.strapiSinglePage.Title} />*/}
+    
       <h1>{data.strapiPublication.Title}</h1>
       <p>by <Link to={`/authors/User_${data.strapiPublication.Author.id}`}>{data.strapiPublication.Author.username}</Link></p>
       <Img fluid={data.strapiPublication.Poster.childImageSharp.fluid} />

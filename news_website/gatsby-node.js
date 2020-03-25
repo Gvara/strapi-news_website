@@ -52,6 +52,10 @@ exports.createPages = ({ actions, graphql }) => {
   
   const getPublications = makeRequest(graphql, `
     {
+      strapiNavigation(strapiId: {eq: 1}) {
+        Alias
+      }
+
       allStrapiPublication {
         edges {
           node {
@@ -65,7 +69,7 @@ exports.createPages = ({ actions, graphql }) => {
     // Create pages for each article.
     result.data.allStrapiPublication.edges.forEach(({ node }) => {
       createPage({
-        path: `/publications/${node.Alias}.html`,
+        path: `/${result.data.strapiNavigation.Alias}/${node.Alias}.html`,
         component: path.resolve(`src/templates/publication.js`),
         context: {
           id: node.id,
