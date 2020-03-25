@@ -1,0 +1,32 @@
+{
+  "connection": "default",
+  "collectionName": "components_all_page_blocks_headers",
+  "info": {
+    "name": "Header",
+    "icon": "archway"
+  },
+  "options": {},
+  "attributes": {
+    "Header_Title": {
+      "type": "string"
+    },
+    "Header_Description": {
+      "type": "text"
+    },
+    "Header_Content": {
+      "type": "richtext"
+    },
+    "Header_Image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "Header_ImageTitle": {
+      "type": "string"
+    },
+    "Header_ImageAlt": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "connection": "default",
+  "collectionName": "components_general_settings_site_footers",
+  "info": {
+    "name": "SiteFooter",
+    "icon": "arrow-circle-down"
+  },
+  "options": {},
+  "attributes": {
+    "SiteFooter_Title": {
+      "type": "string"
+    },
+    "SiteFooter_Description": {
+      "type": "text"
+    },
+    "SiteFooter_Content": {
+      "type": "richtext"
+    }
+  }
+}

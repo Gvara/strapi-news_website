@@ -1,0 +1,130 @@
+// import { Link } from "gatsby"
+import PropTypes from "prop-types"
+import React from "react"
+import { StaticQuery, graphql } from 'gatsby'
+
+// const data = useStaticQuery(graphql`
+//   query Header {
+//     strapiSinglePage(strapiId: {eq: 1}) {
+//       Title
+//       blocks {
+//         ... on StrapiSinglePageBlocks {
+//           Header_Inner {
+//             ... on StrapiSinglePageBlocksHeader_Inner {
+//               Title
+//               Description
+//             }
+//           }
+//           Article_Inner {
+//             ... on StrapiSinglePageBlocksArticle_Inner {
+//               Title
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `)
+
+const Header = () => (
+<StaticQuery
+              query={graphql`
+                query {
+                  strapiSinglePage(id: {eq: "1"}) {
+                    Title
+                    blocks {
+                      ... on StrapiSinglePageBlocks {
+                        Header_Inner {
+                          ... on StrapiSinglePageBlocksHeader_Inner {
+                            Title
+                            Description
+                          }
+                        }
+                        Article_Inner {
+                          ... on StrapiSinglePageBlocksArticle_Inner {
+                            Title
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              `}
+              render={data => (
+                <header>
+                <div class="row row-header">
+                    <div class="description-wrapper">
+                        <div class="description-block">
+                            <div class="title-block">
+                                <h1>{data.strapiSinglePage.blocks[0].Header_Inner.Title}</h1>
+                            </div>
+                            
+                            <div class="text-block">
+                                <h2>{data.strapiSinglePage.blocks[0].Header_Inner.Description}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poster-bg-block image-size-cover-block">
+                  
+                </div>
+              </header>
+              )}
+            />
+)
+
+Header.propTypes = {
+  id: PropTypes.string,
+}
+
+Header.defaultProps = {
+  id: ``,
+}
+
+// export const query = graphql`
+//   query Header {
+//     strapiSinglePage(strapiId: {eq: 1}) {
+//       Title
+//       blocks {
+//         ... on StrapiSinglePageBlocks {
+//           Header_Inner {
+//             ... on StrapiSinglePageBlocksHeader_Inner {
+//               Title
+//               Description
+//             }
+//           }
+//           Article_Inner {
+//             ... on StrapiSinglePageBlocksArticle_Inner {
+//               Title
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
+
+// const Header = ({ data }) => (
+//   <header>
+//     <div class="row row-header">
+//         <div class="description-wrapper">
+//             <div class="description-block">
+//                 <div class="title-block">
+//                     <h1>{data.strapiSinglePage}</h1>
+//                 </div>
+                
+//                 <div class="text-block">
+                    
+//                 </div>
+//             </div>
+//         </div>
+//     </div>
+
+//     <div class="poster-bg-block image-size-cover-block">
+      
+//     </div>
+//   </header>
+// )
+
+export default Header

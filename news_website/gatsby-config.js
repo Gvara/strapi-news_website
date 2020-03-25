@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'News Website',
-    description: 'Gatsby News Website with Strapi',
-    author: 'Alexander'
+    title: 'ARCUA',
+    description: 'Arc.UA розробляє і створює рішення проблем у різних сферах життя суспільства, щоб допомогти спільнотам українців зробити нашу країну безпечнішою, здоровішою та процвітаючою.',
+    author: 'ARC.UA'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -18,7 +18,11 @@ module.exports = {
       options: {
         apiURL: 'http://localhost:1337',
         contentTypes: [ // List of the Content Types you want to be able to request from Gatsby.
+          'general-settings',
+          'navigation',
+          'single-page',
           'publication',
+          'member',
           'user'
         ],
         queryLimit: 1000,

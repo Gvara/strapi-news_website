@@ -1,0 +1,60 @@
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import Layout from '../components/layout' 
+
+import Header from "../components/header"
+
+export const query = graphql`
+  query PublicationTemplate($id: String!) {
+    strapiSinglePage(strapiId: {eq: 1}) {
+      Title
+      blocks {
+        ... on StrapiSinglePageBlocks {
+          Header_Inner {
+            ... on StrapiSinglePageBlocksHeader_Inner {
+              Title
+              Description
+            }
+          }
+          Article_Inner {
+            ... on StrapiSinglePageBlocksArticle_Inner {
+              Title
+            }
+          }
+        }
+      }
+    }
+
+    strapiPublication(id: {eq: $id}) {
+      Title
+      Content
+      Poster_Main {
+          childImageSharp {
+            fluid(maxWidth: 650) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      Author {
+        id
+        username
+      }
+    }
+  }
+`
+
+const PublicationTemplate = ({ data }) => (
+  <>
+    <Layout>
+      <Header headerTitle={data.strapiSinglePage.Title} headerDescription={data.strapiSinglePage.Title} />
+    
+      <h1>{data.strapiPublication.Title}</h1>
+      <p>by <Link to={`/authors/User_${data.strapiPublication.Author.id}`}>{data.strapiPublication.Author.username}</Link></p>
+      <Img fluid={data.strapiPublication.Poster_Main.childImageSharp.fluid} />
+      <div dangerouslySetInnerHTML={{ __html: data.strapiPublication.Content }} />
+    </Layout>
+  </>
+)
+
+export default PublicationTemplate

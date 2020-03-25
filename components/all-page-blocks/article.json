@@ -1,0 +1,17 @@
+{
+  "connection": "default",
+  "collectionName": "components_all_page_blocks_articles",
+  "info": {
+    "name": "Article",
+    "icon": "clipboard-list"
+  },
+  "options": {},
+  "attributes": {
+    "Article_Title": {
+      "type": "string"
+    },
+    "Article_Content": {
+      "type": "richtext"
+    }
+  }
+}

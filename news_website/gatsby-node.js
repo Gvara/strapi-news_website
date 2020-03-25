@@ -23,6 +23,32 @@ const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
 // data layer is bootstrapped to let plugins create pages from data.
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
+
+  const getMenuPages = makeRequest(graphql, `
+    {
+      allStrapiNavigation {
+        edges {
+          node {
+            id
+            Title
+            Alias
+            File_Name
+          }
+        }
+      }
+    }
+    `).then(result => {
+    // Create pages for menu static pages.
+    result.data.allStrapiNavigation.edges.forEach(({ node }) => {
+      createPage({
+        path: `/${node.Alias}`,
+        component: path.resolve(`src/templates/menu/pages/${node.File_Name}.js`),
+        context: {
+          id: node.id,
+        },
+      })
+    })
+  });
   
   const getPublications = makeRequest(graphql, `
     {
@@ -30,6 +56,7 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             id
+            Alias
           }
         }
       }
@@ -38,7 +65,7 @@ exports.createPages = ({ actions, graphql }) => {
     // Create pages for each article.
     result.data.allStrapiPublication.edges.forEach(({ node }) => {
       createPage({
-        path: `/publications/${node.id}`,
+        path: `/publications/${node.Alias}.html`,
         component: path.resolve(`src/templates/publication.js`),
         context: {
           id: node.id,
@@ -72,6 +99,7 @@ exports.createPages = ({ actions, graphql }) => {
   
   // Query for articles nodes to use in creating pages.
   return Promise.all([
+    getMenuPages,
     getPublications,
     getAuthors,
   ])

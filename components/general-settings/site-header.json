@@ -1,0 +1,32 @@
+{
+  "connection": "default",
+  "collectionName": "components_general_settings_site_headers",
+  "info": {
+    "name": "SiteHeader",
+    "icon": "arrow-alt-circle-up"
+  },
+  "options": {},
+  "attributes": {
+    "SiteHeader_Title": {
+      "type": "string"
+    },
+    "SiteHeader_Description": {
+      "type": "text"
+    },
+    "SiteHeader_Content": {
+      "type": "richtext"
+    },
+    "SiteHeader_Image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "SiteHeader_ImageTitle": {
+      "type": "string"
+    },
+    "SiteHeader_ImageAlt": {
+      "type": "string"
+    }
+  }
+}

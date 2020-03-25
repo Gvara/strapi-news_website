@@ -1,0 +1,16 @@
+{
+  "connection": "default",
+  "collectionName": "components_members_teams",
+  "info": {
+    "name": "Team",
+    "icon": "users"
+  },
+  "options": {},
+  "attributes": {
+    "Member": {
+      "type": "component",
+      "repeatable": true,
+      "component": "members.member"
+    }
+  }
+}

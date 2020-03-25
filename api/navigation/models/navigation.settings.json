@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "navigation-pages",
+  "info": {
+    "name": "NavigationPage"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "FileName": {
+      "type": "string"
+    },
+    "Alias": {
+      "type": "uid",
+      "targetField": "Title"
+    }
+  }
+}

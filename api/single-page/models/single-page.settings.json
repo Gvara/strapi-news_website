@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "single_pages",
+  "info": {
+    "name": "SinglePage"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Content": {
+      "type": "richtext"
+    },
+    "Blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "members.team",
+        "all-page-blocks.header",
+        "all-page-blocks.article"
+      ]
+    },
+    "Poster": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "PosterTitle": {
+      "type": "string"
+    },
+    "PosterAlt": {
+      "type": "string"
+    }
+  }
+}

@@ -23,16 +23,59 @@
       "type": "richtext",
       "required": true
     },
-    "Poster_Main": {
+    "Poster": {
       "model": "file",
       "via": "related",
       "plugin": "upload",
       "required": true
     },
-    "author": {
+    "Author": {
       "plugin": "users-permissions",
       "model": "user",
       "via": "publications"
+    },
+    "Category": {
+      "model": "publications-categories",
+      "via": "publications"
+    },
+    "Alias": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "PosterTitle": {
+      "type": "string"
+    },
+    "PosterAlt": {
+      "type": "string"
+    },
+    "MenuIndex": {
+      "type": "integer",
+      "default": 9999
+    },
+    "IntroText": {
+      "type": "richtext"
+    },
+    "PreviewStyle": {
+      "type": "enumeration",
+      "enum": [
+        "style_1",
+        "style_2",
+        "style_3",
+        "style_4",
+        "style_5"
+      ],
+      "private": false,
+      "required": false,
+      "default": "style_1"
+    },
+    "ColorStyle": {
+      "type": "enumeration",
+      "enum": [
+        "dark",
+        "light"
+      ],
+      "required": false,
+      "default": "dark"
     }
   }
 }

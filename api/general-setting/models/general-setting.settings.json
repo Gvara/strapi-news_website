@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "general_settings",
+  "info": {
+    "name": "GeneralSetting"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Data": {
+      "type": "dynamiczone",
+      "components": [
+        "general-settings.site-meta",
+        "general-settings.site-header",
+        "general-settings.site-footer",
+        "general-settings.general-data"
+      ]
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}

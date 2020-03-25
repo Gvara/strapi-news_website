@@ -1,0 +1,23 @@
+{
+  "connection": "default",
+  "collectionName": "components_general_settings_general_data",
+  "info": {
+    "name": "GeneralData",
+    "icon": "arrows-alt"
+  },
+  "options": {},
+  "attributes": {
+    "GeneralData_NavLogo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "GeneralData_NavLogoTitle": {
+      "type": "string"
+    },
+    "GeneralData_NavLogoAlt": {
+      "type": "string"
+    }
+  }
+}

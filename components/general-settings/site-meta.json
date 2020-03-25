@@ -1,0 +1,29 @@
+{
+  "connection": "default",
+  "collectionName": "components_general_settings_site_metas",
+  "info": {
+    "name": "SiteMeta",
+    "icon": "balance-scale"
+  },
+  "options": {},
+  "attributes": {
+    "SiteMeta_Title": {
+      "type": "string"
+    },
+    "SiteMeta_Description": {
+      "type": "text"
+    },
+    "SiteMeta_Image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "SiteMeta_ImageTitle": {
+      "type": "string"
+    },
+    "SiteMeta_ImageAlt": {
+      "type": "string"
+    }
+  }
+}

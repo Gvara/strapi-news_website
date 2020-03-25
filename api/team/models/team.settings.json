@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "connection": "default",
+  "collectionName": "teams",
+  "info": {
+    "name": "Team"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Description": {
+      "type": "text",
+      "required": true
+    },
+    "Alias": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "Team": {
+      "type": "component",
+      "repeatable": true,
+      "component": "members.team"
+    }
+  }
+}

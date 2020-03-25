@@ -1,0 +1,29 @@
+{
+  "connection": "default",
+  "collectionName": "components_members_members",
+  "info": {
+    "name": "Member",
+    "icon": "user-alt"
+  },
+  "options": {},
+  "attributes": {
+    "Member_Title": {
+      "type": "string"
+    },
+    "Member_Content": {
+      "type": "richtext"
+    },
+    "Member_Image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "Member_ImageTitle": {
+      "type": "string"
+    },
+    "Member_ImageAlt": {
+      "type": "string"
+    }
+  }
+}

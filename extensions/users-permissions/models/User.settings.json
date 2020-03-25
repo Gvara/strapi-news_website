@@ -55,7 +55,7 @@
       "configurable": false
     },
     "publications": {
-      "via": "author",
+      "via": "Author",
       "collection": "publication"
     }
   }

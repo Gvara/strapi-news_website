@@ -3,19 +3,21 @@ import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/layout' 
 
+import Header from "../components/header"
+
 export const query = graphql`
   query PublicationTemplate($id: String!) {
     strapiPublication(id: {eq: $id}) {
       Title
       Content
-      Poster_Main {
+      Poster {
           childImageSharp {
             fluid(maxWidth: 650) {
               ...GatsbyImageSharpFluid
             }
           }
         }
-      author {
+      Author {
         id
         username
       }
@@ -24,12 +26,15 @@ export const query = graphql`
 `
 
 const PublicationTemplate = ({ data }) => (
-  <Layout>
-    <h1>{data.strapiPublication.Title}</h1>
-    <p>by <Link to={`/authors/User_${data.strapiPublication.author.id}`}>{data.strapiPublication.author.username}</Link></p>
-    <Img fluid={data.strapiPublication.Poster_Main.childImageSharp.fluid} />
-    <div dangerouslySetInnerHTML={{ __html: data.strapiPublication.Content }} />
-  </Layout>
+  <>
+    <Layout>
+      
+      <h1>{data.strapiPublication.Title}</h1>
+      <p>by <Link to={`/authors/User_${data.strapiPublication.Author.id}`}>{data.strapiPublication.Author.username}</Link></p>
+      <Img fluid={data.strapiPublication.Poster.childImageSharp.fluid} />
+      <div dangerouslySetInnerHTML={{ __html: data.strapiPublication.Content }} />
+    </Layout>
+  </>
 )
 
 export default PublicationTemplate
