@@ -12,7 +12,7 @@ import PropTypes from "prop-types"
 //import Seo from "./seo"
 import Helmet from "react-helmet"
 //import Header from "./header"
-import "./layout.css"
+import "./main1_1.min.css"
 
 import Menu from "./menu"
 import Footer from "./footer"

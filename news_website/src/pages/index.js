@@ -280,7 +280,8 @@ const IndexPage = () => (
           <Seo title       = "ARC.UA"
                description = {data.homePageData.Description} />
 
-          <Header headerTitle       = {data.homePageData.Blocks[0].Header_Title} 
+          <Header headerClass       = "home-page"
+                  headerTitle       = {data.homePageData.Blocks[0].Header_Title} 
                   headerDescription = {data.homePageData.Blocks[0].Header_Description}
                   headerImage       = {data.homePageData.Blocks[0].Header_Image.childImageSharp.fluid}
                   headerImageTitle  = {ImageAttr(data.homePageData.Blocks[0].Header_ImageTitle, data.metaData.Data[0].SiteMeta_Title)}

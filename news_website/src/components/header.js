@@ -2,8 +2,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import Img from 'gatsby-image'
 
-const Header = ({ headerTitle, headerDescription, headerImage, headerImageTitle, headerImageAlt }) => (
-  <header>
+const Header = ({ headerClass, headerTitle, headerDescription, headerImage, headerImageTitle, headerImageAlt }) => (
+  <header className={headerClass}>
     <div className="row row-header">
         <div className="description-wrapper">
             <div className="description-block">
@@ -24,7 +24,8 @@ const Header = ({ headerTitle, headerDescription, headerImage, headerImageTitle,
            objectPosition = "50% 50%"
            title          = {headerImageTitle}
            alt            = {headerImageAlt}
-           imgStyle       = {{ top: '50%', left: '50%'}} />
+           style          = {{height: '100%'}}
+           imgStyle       = {{top: '50%', left: '50%'}} />
     </div>
   </header>
 )
