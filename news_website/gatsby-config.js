@@ -1,10 +1,12 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: 'localhost:9001',
     title: 'ARC.UA',
     description: 'Arc.UA розробляє і створює рішення проблем у різних сферах життя суспільства, щоб допомогти спільнотам українців зробити нашу країну безпечнішою, здоровішою та процвітаючою.',
     author: 'ARC.UA'
   },
   plugins: [
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,

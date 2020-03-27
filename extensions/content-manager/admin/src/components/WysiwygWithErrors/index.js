@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { isEmpty } from 'lodash';
 import { Label, InputDescription, InputErrors } from 'strapi-helper-plugin';
-import Editor from '../CKEditor';
+import Editor from '../CKEditor4';
 
 const WysiwygWithErrors = ({
   inputDescription,
@@ -25,7 +25,6 @@ const WysiwygWithErrors = ({
   
   return (
     <div
-      className="col-12"
       style={{
         marginBottom: '1.6rem',
         fontSize: '1.3rem',
