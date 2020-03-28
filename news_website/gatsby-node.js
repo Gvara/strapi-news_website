@@ -32,7 +32,7 @@ exports.createPages = ({ actions, graphql }) => {
             id
             Title
             Alias
-            File_Name
+            FileName
           }
         }
       }
@@ -42,7 +42,7 @@ exports.createPages = ({ actions, graphql }) => {
     result.data.allStrapiNavigation.edges.forEach(({ node }) => {
       createPage({
         path: `/${node.Alias}`,
-        component: path.resolve(`src/templates/menu/pages/${node.File_Name}.js`),
+        component: path.resolve(`src/templates/menu/pages/${node.FileName}.js`),
         context: {
           id: node.id,
         },
