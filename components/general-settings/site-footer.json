@@ -15,6 +15,15 @@
     },
     "SiteFooter_Content": {
       "type": "richtext"
+    },
+    "SiteFooter_Title_En": {
+      "type": "string"
+    },
+    "SiteFooter_Description_En": {
+      "type": "text"
+    },
+    "SiteFooter_Content_En": {
+      "type": "richtext"
     }
   }
 }

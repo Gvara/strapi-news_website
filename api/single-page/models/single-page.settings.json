@@ -39,6 +39,21 @@
     },
     "PosterAlt": {
       "type": "string"
+    },
+    "Title_En": {
+      "type": "string"
+    },
+    "Description_En": {
+      "type": "text"
+    },
+    "Content_En": {
+      "type": "richtext"
+    },
+    "PosterTitle_En": {
+      "type": "string"
+    },
+    "PosterAlt_En": {
+      "type": "string"
     }
   }
 }

@@ -76,6 +76,28 @@
       ],
       "required": false,
       "default": "dark"
+    },
+    "Title_En": {
+      "type": "string"
+    },
+    "Description_En": {
+      "type": "text"
+    },
+    "Content_En": {
+      "type": "richtext"
+    },
+    "Alias_En": {
+      "type": "uid",
+      "targetField": "Title_En"
+    },
+    "PosterTitle_En": {
+      "type": "string"
+    },
+    "PosterAlt_En": {
+      "type": "string"
+    },
+    "IntroText_En": {
+      "type": "richtext"
     }
   }
 }

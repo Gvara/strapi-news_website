@@ -19,6 +19,20 @@
     "Alias": {
       "type": "uid",
       "targetField": "Title"
+    },
+    "MenuIndex": {
+      "type": "integer",
+      "default": 9999
+    },
+    "Title_En": {
+      "type": "string"
+    },
+    "FileName_En": {
+      "type": "string"
+    },
+    "Alias_En": {
+      "type": "uid",
+      "targetField": "Title_En"
     }
   }
 }

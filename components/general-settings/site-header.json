@@ -27,6 +27,21 @@
     },
     "SiteHeader_ImageAlt": {
       "type": "string"
+    },
+    "SiteHeader_Title_En": {
+      "type": "string"
+    },
+    "SiteHeader_Description_En": {
+      "type": "text"
+    },
+    "SiteHeader_Content_En": {
+      "type": "richtext"
+    },
+    "SiteHeader_ImageTitle_En": {
+      "type": "string"
+    },
+    "SiteHeader_ImageAlt_En": {
+      "type": "string"
     }
   }
 }

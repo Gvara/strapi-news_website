@@ -18,7 +18,7 @@ function PublicationPreviewStyle(data, document, inputElem) {
     return (
       <div key={document.node.id} className="float-l medium-6 tpl-wrapper style-1">
         <Link className="tpl-block" 
-              to={`/${data.publicationsCategotyAlias.Alias}/${document.node.Alias}.html`} 
+              to={`/en/${data.publicationsCategotyAlias.Alias}/${document.node.Alias}.html`} 
               style={PublicationColorStyle(document.node.ColorStyle)}>
           <div className="description-block"
                style={PublicationColorStyle(document.node.ColorStyle)}>
@@ -38,7 +38,7 @@ function PublicationPreviewStyle(data, document, inputElem) {
     return (
       <div key={document.node.id} className="float-l medium-6 tpl-wrapper style-2">
         <Link className="tpl-block" 
-              to={`/${data.publicationsCategotyAlias.Alias}/${document.node.Alias}.html`} 
+              to={`/en/${data.publicationsCategotyAlias.Alias}/${document.node.Alias}.html`} 
               style={PublicationColorStyle(document.node.ColorStyle)}>
           <div className="description-block"
                style={PublicationColorStyle(document.node.ColorStyle)}>
@@ -71,7 +71,7 @@ function PublicationPreviewStyle(data, document, inputElem) {
     return (
       <div key={document.node.id} className="float-l medium-6 tpl-wrapper style-3">
         <Link className="tpl-block" 
-              to={`/${data.publicationsCategotyAlias.Alias}/${document.node.Alias}.html`} 
+              to={`/en/${data.publicationsCategotyAlias.Alias}/${document.node.Alias}.html`} 
               style={PublicationColorStyle(document.node.ColorStyle)}>
           <div className="description-block"
                style={PublicationColorStyle(document.node.ColorStyle)}>
@@ -104,7 +104,7 @@ function PublicationPreviewStyle(data, document, inputElem) {
     return (
       <div key={document.node.id} className="float-l medium-6 tpl-wrapper style-4">
         <Link className="tpl-block" 
-              to={`/${data.publicationsCategotyAlias.Alias}/${document.node.Alias}.html`} 
+              to={`/en/${data.publicationsCategotyAlias.Alias}/${document.node.Alias}.html`} 
               style={PublicationColorStyle(document.node.ColorStyle)}>
           <div className="description-block"
                style={PublicationColorStyle(document.node.ColorStyle)}>
@@ -137,7 +137,7 @@ function PublicationPreviewStyle(data, document, inputElem) {
     return (
       <div key={document.node.id} className="float-l large-12 tpl-wrapper style-5">
         <Link className="group tpl-block" 
-              to={`/${data.publicationsCategotyAlias.Alias}/${document.node.Alias}.html`} 
+              to={`/en/${data.publicationsCategotyAlias.Alias}/${document.node.Alias}.html`} 
               style={PublicationColorStyle(document.node.ColorStyle)}>
           
           <div className="float-l medium-6 poster-wrapper">
@@ -168,7 +168,7 @@ function PublicationPreviewStyle(data, document, inputElem) {
   return (
     <div key={document.node.id} className="float-l medium-6 tpl-wrapper style-1">
       <Link className="tpl-block" 
-            to={`/${data.publicationsCategotyAlias.Alias}/${document.node.Alias}.html`} 
+            to={`/en/${data.publicationsCategotyAlias.Alias}/${document.node.Alias}.html`} 
             style={PublicationColorStyle(document.node.ColorStyle)}>
         <div className="description-block"
               style={PublicationColorStyle(document.node.ColorStyle)}>
@@ -227,22 +227,22 @@ class PublicationsPage extends React.Component {
               }
 
               publicationsCategotyAlias: strapiNavigation(strapiId: {eq: 1}) {
-                Alias
+                Alias: Alias_En
               }
               
               PublicationsData: strapiSinglePage(strapiId: {eq: 4}) {
-                Title
-                Description
+                Title: Title_En
+                Description: Description_En
               }
               
               allStrapiPublication(sort: {order: ASC, fields: MenuIndex}) {
                 edges {
                   node {
                     id
-                    Alias
-                    Title
-                    Description
-                    IntroText
+                    Alias: Alias_En
+                    Title: Title_En
+                    Description: Description_En
+                    IntroText: IntroText_En
                     Poster {
                       childImageSharp {
                         fluid(maxWidth: 956, quality: 100) {
@@ -250,8 +250,8 @@ class PublicationsPage extends React.Component {
                         }
                       }
                     }
-                    PosterTitle
-                    PosterAlt
+                    PosterTitle: PosterTitle_En
+                    PosterAlt: PosterAlt_En
                     PreviewStyle
                     ColorStyle
                   }

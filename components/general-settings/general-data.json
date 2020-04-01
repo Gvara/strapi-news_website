@@ -18,6 +18,12 @@
     },
     "GeneralData_NavLogoAlt": {
       "type": "string"
+    },
+    "GeneralData_NavLogoTitle_En": {
+      "type": "string"
+    },
+    "GeneralData_NavLogoAlt_En": {
+      "type": "string"
     }
   }
 }

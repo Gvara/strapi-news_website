@@ -7,6 +7,14 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'localhost:9001',
+        sitemap: 'localhost:9001/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
@@ -18,7 +26,9 @@ module.exports = {
     {
       resolve: 'gatsby-source-strapi',
       options: {
-        apiURL: 'http://localhost:1337',
+        apiURL: process.env.DEPLOY_URL
+          ? "https://admin.arcua.gvara.com.ua"
+          : "http://localhost:1337",
         contentTypes: [ // List of the Content Types you want to be able to request from Gatsby.
           'general-settings',
           'navigation',

@@ -32,8 +32,8 @@ class ContactsPage extends React.Component {
               }
 
               ContactsData: strapiSinglePage(strapiId: {eq: 3}) {
-                Title
-                Description
+                Title: Title_En
+                Description: Description_En
               }
             }
           `}

@@ -24,6 +24,18 @@
     },
     "Member_ImageAlt": {
       "type": "string"
+    },
+    "Member_Title_En": {
+      "type": "string"
+    },
+    "Member_Content_En": {
+      "type": "richtext"
+    },
+    "Member_ImageTitle_En": {
+      "type": "string"
+    },
+    "Member_ImageAlt_En": {
+      "type": "string"
     }
   }
 }

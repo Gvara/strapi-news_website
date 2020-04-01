@@ -12,6 +12,12 @@
     },
     "Article_Content": {
       "type": "richtext"
+    },
+    "Article_Title_En": {
+      "type": "string"
+    },
+    "Article_Content_En": {
+      "type": "richtext"
     }
   }
 }

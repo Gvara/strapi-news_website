@@ -38,6 +38,25 @@
     "MenuIndex": {
       "type": "integer",
       "default": 9999
+    },
+    "Title_En": {
+      "type": "string"
+    },
+    "Description_En": {
+      "type": "text"
+    },
+    "Alias_En": {
+      "type": "uid",
+      "targetField": "Title_En"
+    },
+    "Content_En": {
+      "type": "richtext"
+    },
+    "ImageTitle_En": {
+      "type": "string"
+    },
+    "ImageAlt_En": {
+      "type": "string"
     }
   }
 }

@@ -17,7 +17,7 @@ function ImageAttr(inputElem, defaultElem) {
 }
 
 export const query = graphql`
-  query PublicationTemplate($id: String!) {
+  query PublicationTemplateEn($id: String!) {
     headerImage: strapiGeneralSettings(strapiId: {eq: 2}) {
       Data {
         ... on StrapiGeneralSettingsData {
@@ -35,9 +35,9 @@ export const query = graphql`
     }
 
     strapiPublication(id: {eq: $id}) {
-      Title
-      Description
-      Content
+      Title: Title_En
+      Description: Description_En
+      Content: Content_En
       Poster {
         childImageSharp {
           fluid(maxWidth: 1200, quality: 100) {
@@ -45,8 +45,8 @@ export const query = graphql`
           }
         }
       }
-      PosterTitle
-      PosterAlt
+      PosterTitle: PosterTitle_En
+      PosterAlt: PosterAlt_En
     }
   }
 `
@@ -54,7 +54,7 @@ export const query = graphql`
 class PublicationTemplate extends React.Component {
   componentDidMount() {
     const { pageContext } = this.props;
-
+    
     document.querySelector(".link-ua").href = pageContext.alias_ua;
     document.querySelector(".link-en").href = pageContext.alias_en;
   }
@@ -68,8 +68,8 @@ class PublicationTemplate extends React.Component {
     
     return (
       <>
-        <Seo  title       = {data.strapiPublication.Title + " | ARC.UA"}
-              description = {data.strapiPublication.Description} />
+        <Seo title      = {data.strapiPublication.Title + " | ARC.UA"}
+            description = {data.strapiPublication.Description} />
 
         <Header headerClass       = "article-header"
                 headerTitle       = {data.strapiPublication.Title} 
@@ -84,9 +84,9 @@ class PublicationTemplate extends React.Component {
               <div className="row row-article-poster">
                 <div className="article-poster-block">
                   <div className="image-block">
-                    <Img  fluid = {data.strapiPublication.Poster.childImageSharp.fluid}
-                          title = {ImageAttr(data.strapiPublication.PosterTitle, data.strapiPublication.Title)}
-                          alt   = {ImageAttr(data.strapiPublication.PosterAtl, data.strapiPublication.Title + " | ARC.UA")} />
+                    <Img fluid = {data.strapiPublication.Poster.childImageSharp.fluid}
+                        title = {ImageAttr(data.strapiPublication.PosterTitle, data.strapiPublication.Title)}
+                        alt   = {ImageAttr(data.strapiPublication.PosterAtl, data.strapiPublication.Title + " | ARC.UA")} />
                   </div>
                 </div>
               </div>

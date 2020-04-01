@@ -24,6 +24,18 @@
     },
     "SiteMeta_ImageAlt": {
       "type": "string"
+    },
+    "SiteMeta_Title_En": {
+      "type": "string"
+    },
+    "SiteMeta_Description_En": {
+      "type": "text"
+    },
+    "SiteMeta_ImageTitle_En": {
+      "type": "string"
+    },
+    "SiteMeta_ImageAlt_En": {
+      "type": "string"
     }
   }
 }

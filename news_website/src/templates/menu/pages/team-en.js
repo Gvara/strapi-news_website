@@ -41,16 +41,16 @@ class TeamPage extends React.Component {
               }
 
               TeamData: strapiSinglePage(strapiId: {eq: 2}) {
-                Title
-                Description
+                Title: Title_En
+                Description: Description_En
               }
 
               allStrapiMember(sort: {order: ASC, fields: MenuIndex}) {
                 edges {
                   node {
                     id
-                    Title
-                    Content
+                    Title: Title_En
+                    Content: Content_En
                     Image {
                       childImageSharp {
                         fluid(maxWidth: 520, quality: 100) {
@@ -58,8 +58,8 @@ class TeamPage extends React.Component {
                         }
                       }
                     }
-                    ImageTitle
-                    ImageAlt
+                    ImageTitle: ImageTitle_En
+                    ImageAlt: ImageAlt_En
                   }
                 }
               }

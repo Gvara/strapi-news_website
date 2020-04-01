@@ -27,6 +27,21 @@
     },
     "Header_ImageAlt": {
       "type": "string"
+    },
+    "Header_Title_En": {
+      "type": "string"
+    },
+    "Header_Description_En": {
+      "type": "text"
+    },
+    "Header_Content_En": {
+      "type": "richtext"
+    },
+    "Header_ImageTitle_En": {
+      "type": "string"
+    },
+    "Header_ImageAlt_En": {
+      "type": "string"
     }
   }
 }
